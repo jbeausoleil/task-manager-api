@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "./node_modules/.bin/env-cmd -f ./config/dev.env nodemon src/index.js",
     "start": "node src/index.js",
-    "test": "jest"
+    "test": "./node_modules/.bin/env-cmd -f ./config/test.env jest --watch --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +29,7 @@
     "env-cmd": "^10.1.0",
     "jest": "^26.6.3",
     "nodemon": "^2.0.6",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "supertest": "^6.1.3"
   }
 }

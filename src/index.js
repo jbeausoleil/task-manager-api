@@ -1,14 +1,5 @@
-const express = require("express");
-require("./db/mongoose");
-const taskRouter = require("./routers/task.js");
-const userRouter = require("./routers/user.js");
-
-const app = express();
+const app = require('./app')
 const port = process.env.PORT; // Port located in environment file
-
-app.use(express.json());
-app.use(userRouter);
-app.use(taskRouter);
 
 app.listen(port, () => {
   if (process.env.port) {
